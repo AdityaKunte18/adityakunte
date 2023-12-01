@@ -110,6 +110,7 @@
   width: 100%; /* Full width on hover */
 }
 
+
 .title-list-element-resume{
   margin-bottom: 20px;
   display: flex;
@@ -178,10 +179,10 @@ html[data-bs-theme='light'] .icon_container i {
   <div class="main_body">
     <div class="centered-title">
       <div class="spacer">
-        <img src="src/pfp.png" alt="my pfp" style="margin-left:150px;margin-top: 10px;height: 150px;width: 150px; border-radius: 50%;">
+        <img src="src/pfp.png" alt="my pfp" style="margin-left:120px;margin-top: 10px;height: 150px;width: 150px; border-radius: 50%;">
       </div> 
       <div>
-        <h1 class="underline-animation" style="margin-left: -180px;">Hi, I'm <span id = "Aditya" style="color: aquamarine;"> Aditya! </span></h1>
+        <h1 class="underline-animation" style="margin-left: -150px;">Hi, I'm <span id = "Aditya" style="color: aquamarine;"> Aditya! </span></h1>
       </div>
       <div class="icon_container"> 
         <h1><i class="bi bi-moon-fill" style="margin-right: 20px;" onclick="toggleTheme()"></i></h1>
@@ -190,7 +191,7 @@ html[data-bs-theme='light'] .icon_container i {
 
   
     <div class="body-container">
-      <ol style="list-style-type: none;">
+      <ol style="list-style-type: none;margin-left:-50px;">
         <li class="title-list-element"  id="aboutMe">
           <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:-3px;margin-bottom: 8px;"  width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -204,7 +205,7 @@ html[data-bs-theme='light'] .icon_container i {
             </svg>
             <h1 style="margin-left: 10px;">Projects</h1>
         </li>
-        <a href="src/AdityaK_Resume.pdf" download="src/AdityaK_Resume.pdf" class="link" target="_blank">
+        <a href="src/AdityaK_Resume.pdf" download="AdityaK_Resume.pdf" class="link" target="_blank">
         <li class="title-list-element-resume" id="resume">
             <svg  style="margin-bottom: 5px;margin-left:-5px;" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
@@ -324,12 +325,69 @@ var Contact = `
 
 `
 
+var Projects = `
+  <ol style="list-style-type: none; margin-left:-120px">
+    <li> 
+
+<div style="display:flex;flex-direction:row;justify-content:space-between;">
+  <div class="card" style="width: 40rem; margin-bottom:10px">
+    <div class="card-body">
+      <h5 class="card-title">Ascent Rock Climbing Tool</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Embedded Systems | C++</h6>
+      <p class="card-text">This was my team's project for the Buildspace Hackathon. We used muscle sensors to measure forearm
+        grip strength, and returned metrics like fatigue-periods, max grip strength, etc.
+        </p>
+      <a href="https://github.com/shiv213/ascent" class="card-link">Github</a>
+      <a href="https://www.youtube.com/watch?v=cPiFO2cOo_4&t=5s" class="card-link">Demo Video</a>
+      </div>
+  </div>
+  <div class="card" style="width: 40rem; margin-left:20px;margin-bottom:10px">
+    <div class="card-body">
+      <h5 class="card-title">Course Recommendation System</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Full-stack | Python </h6>
+      <p class="card-text">
+         For one of my classes I was part of a team that created a course recommendation system. The user would select their courses,
+         and we would collect information on the professor that taught it, sentiment analysis from reddit comments on the course, and 
+         other factors (total credits, number of classes in a day). I designed the front-end and connected it to the back-end using flask, and also built web-scraper functions 
+         that fetched data from RateMYProf
+       </p>
+      <a href="https://github.com/CS222-UIUC/course-project-group-99" class="card-link">Github</a>
+      </div>
+  </div>
+</div>
+
+</li>
+    <li> 
+
+      <div style="display:flex;flex-direction:row;justify-content:space-between;">
+        <div class="card" style="width: 25.8rem; margin-bottom:10px">
+          <div class="card-body">
+            <h5 class="card-title">Community Detection</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Algorithms | C++</h6>
+            <p class="card-text">
+              Parsed a Stanford musae dataset that contained relationships between users on facebook, based off of if a user was friends or not. We used
+              the Girvan-Newman algorithm to create node clusters, and then used Dijkstra's to find out node relationships 
+              for a given user. 
+            </p>
+            <a href="https://github.com/mbarik2/CS225_final_project/tree/main/CFP" class="card-link">Github</a>
+            </div>
+        </div>
+      </div>
+      
+    </li>
+   </ol>
+
+`
+
+
+
+
   // Add event listeners to your list items
   document.getElementById("aboutMe").addEventListener("mouseover", function() {
     updateInfoBlock(aboutMeContent);
   });
   document.getElementById("projects").addEventListener("mouseover", function() {
-    updateInfoBlock("<p>Projects content...</p>");
+    updateInfoBlock(Projects);
   });
   document.getElementById("contact").addEventListener("mouseover", function() {
     updateInfoBlock(Contact);
