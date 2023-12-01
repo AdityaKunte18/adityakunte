@@ -25,12 +25,12 @@
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -5px; /* Adjust as needed */
+  bottom: -5px; 
   transform: translateX(-50%);
-  height: 2px; /* Thickness of the underline */
-  background-color: currentColor; /* Underline color */
+  height: 2px; 
+  background-color: currentColor; 
   width: 0;
-  animation: underline-grow 1s ease forwards; /* Adjust timing as needed */
+  animation: underline-grow 1s ease forwards; 
 }
 
     .header-spacing {
@@ -40,8 +40,8 @@
     .main_body {
       display: flex;
       flex-direction: column;
-      /* justify-content: flex-start; Aligns content to the start of the container */
-      align-items: center; /* Centers items horizontally */
+      
+      align-items: center; 
       height: 100%;
       width: 100%;
     }
@@ -49,8 +49,8 @@
       display: flex;  
       flex-direction: row;
       align-items: center;
-      justify-content: space-evenly; /* This will push the icon to the right */
-      width: 100%; /* Ensure the container spans the full width */
+      justify-content: space-evenly;
+      width: 100%; 
       margin-top: 15px;
   }
   .icon_container {
@@ -74,7 +74,7 @@
   }
 
   .aboutMeContent {
-  color: aquamarine; /* Choose your desired color */
+  color: aquamarine; 
 }
 
   .body-container {
@@ -90,24 +90,24 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  position: relative; /* Positioning context for the underline */
+  position: relative; 
 }
 
 .title-list-element:hover::after {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 0; /* Adjust as needed */
+  bottom: 0; 
   transform: translateX(-50%);
-  height: 2px; /* Thickness of the underline */
-  background-color: currentColor; /* Underline color */
+  height: 2px; 
+  background-color: currentColor; 
   width: 0;
-  /* transition: width 0.3s ease; Transition for the growing effect */
-  animation: underline-grow 0.5s ease forwards; /* Adjust timing as needed */
+  
+  animation: underline-grow 0.5s ease forwards; 
 }
 
 .title-list-element:hover::after {
-  width: 100%; /* Full width on hover */
+  width: 100%;
 }
 
 
@@ -116,7 +116,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  position: relative; /* Positioning context for the underline */
+  position: relative; 
   cursor: pointer;
 }
 
@@ -124,28 +124,27 @@
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 0; /* Adjust as needed */
+  bottom: 0; 
   transform: translateX(-50%);
-  height: 2px; /* Thickness of the underline */
-  background-color: currentColor; /* Underline color */
+  height: 2px; 
+  background-color: currentColor;
   width: 0;
-  /* transition: width 0.3s ease; Transition for the growing effect */
-  animation: underline-grow 0.5s ease forwards; /* Adjust timing as needed */
+  
+  animation: underline-grow 0.5s ease forwards;
 }
 
 .title-list-element-resume:hover::after {
-  width: 100%; /* Full width on hover */
+  width: 100%;
 }
 
 
-  /* Icon color when theme is dark */
+ 
 html[data-bs-theme='dark'] .icon_container i {
   color: rgb(255, 255, 255);
 }
 
-/* Icon color when theme is light */
 html[data-bs-theme='light'] .icon_container i {
-  color: rgb(223, 164, 15); /* Or any dark-yellow color you prefer */
+  color: rgb(223, 164, 15); 
 }
 
 @keyframes fadeInUp {
@@ -165,13 +164,13 @@ html[data-bs-theme='light'] .icon_container i {
 }
 
 .link {
-  text-decoration: none !important; /* Corrected syntax, removes underline from the link */
-  color: inherit !important; /* Inherits the color from the parent element */
+  text-decoration: none !important; 
+  color: inherit !important; 
 }
 
 .link:hover {
-  text-decoration: none !important; /* Ensures underline doesn't appear on hover */
-  color: inherit !important; /* Keeps the color consistent on hover */
+  text-decoration: none !important;
+  color: inherit !important; 
 }
   </style>
 </head> 
@@ -224,7 +223,7 @@ html[data-bs-theme='light'] .icon_container i {
 
      
       <div id="infoBlock" class="info-block" style=" display:none; position: relative;margin-left: 150px;margin-top: -20px; width: 50%; height: 30%;">
-        <!-- Text will be dynamically inserted here -->
+        
      
       </div>
     
@@ -245,16 +244,16 @@ html[data-bs-theme='light'] .icon_container i {
       if (theme === 'dark') {
         htmlElement.setAttribute('data-bs-theme', 'light');
         icon.className = 'bi bi-brightness-high-fill';
-        name.style.color = "#FF6B6B"; // Set color for light mode
+        name.style.color = "#FF6B6B"; 
         aboutMeElements.forEach(function(element) {
-          element.style.color = "#FF6B6B"; // Set aboutMeContent color for light mode
+          element.style.color = "#FF6B6B";
         });
       } else {
         htmlElement.setAttribute('data-bs-theme', 'dark');
         icon.className = 'bi bi-moon-fill';
-        name.style.color = "aquamarine"; // Set color for light mode
+        name.style.color = "aquamarine"; 
         aboutMeElements.forEach(function(element) {
-          element.style.color = "aquamarine"; // Set aboutMeContent color for dark mode
+          element.style.color = "aquamarine"; 
         });
       }
     }
@@ -263,9 +262,9 @@ html[data-bs-theme='light'] .icon_container i {
       var infoBlock = document.getElementById("infoBlock");
       infoBlock.innerHTML = content;
       infoBlock.style.display = 'block';
-      // Force reflow to restart animation
+      
       infoBlock.style.animation = 'none';
-      infoBlock.offsetHeight; // Trigger reflow
+      infoBlock.offsetHeight; 
       infoBlock.style.animation = '';
   }
 
@@ -380,9 +379,6 @@ var Projects = `
 `
 
 
-
-
-  // Add event listeners to your list items
   document.getElementById("aboutMe").addEventListener("mouseover", function() {
     updateInfoBlock(aboutMeContent);
   });
