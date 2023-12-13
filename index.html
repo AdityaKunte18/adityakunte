@@ -75,7 +75,7 @@
   }
 
   .aboutMeContent {
-  color: aquamarine; 
+  color: #20bc45;
 }
 
   .body-container {
@@ -409,16 +409,16 @@ html[data-bs-theme='light'] .icon_container i {
         htmlElement.setAttribute('data-bs-theme', 'light');
         icon.className = 'bi bi-brightness-high-fill';
         name.style.color = "#FF6B6B"; 
-        aboutMeElements.forEach(function(element) {
-          element.style.color = "#FF6B6B";
-        });
+        // aboutMeElements.forEach(function(element) {
+        //   element.style.color = "#FF6B6B";
+        // });
       } else {
         htmlElement.setAttribute('data-bs-theme', 'dark');
         icon.className = 'bi bi-moon-fill';
         name.style.color = "aquamarine"; 
-        aboutMeElements.forEach(function(element) {
-          element.style.color = "aquamarine"; 
-        });
+        // aboutMeElements.forEach(function(element) {
+        //   element.style.color = "aquamarine"; 
+        // });
       }
     }
 
